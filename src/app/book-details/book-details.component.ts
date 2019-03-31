@@ -14,10 +14,11 @@ export class BookDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    //debugger
   }
 
   editButton(id){
-  
+
     this.edit.emit(id);
   }
 

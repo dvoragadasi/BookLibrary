@@ -6,6 +6,7 @@ import { Book } from './Book';
 })
 export class BookServiceService {
   public books: Book[];
+  lastId: number;
   constructor() {
     this.books =  [
       {
@@ -27,15 +28,27 @@ export class BookServiceService {
         id: '3'
       }
       ];
+      this.lastId = 3;
    }
 
 saveBook(MyBook: Book){
   const itemIndex = this.books.findIndex(item => item.id === MyBook.id);
-  this.books[itemIndex] = MyBook;
+  console.log('itemIndex'+itemIndex);
+  if(itemIndex == -1)
+  {
+    MyBook.id = (++this.lastId).toString();
+    this.books.push(MyBook);
+  }
+  else
+  {
+    this.books[itemIndex] = MyBook;
+  }
+
 }
 
     getBooks()
     {
+      //debugger
     return this.books;
     }
 
@@ -45,7 +58,7 @@ saveBook(MyBook: Book){
    deleteBook()
    {}
 
-   addBook()
+   addBook(MyBook)
    {}
 
 }

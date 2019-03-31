@@ -12,8 +12,8 @@ import { LibraryComponent } from './library/library.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomePageComponent },
-  { path: 'library',      component: BookDetailsComponent },
-  { path: 'editBook/:book',      component: BookEditComponent }
+  { path: 'library',      component: LibraryComponent },
+  { path: 'editBook',      component: BookEditComponent }
 ];
 
 @NgModule({

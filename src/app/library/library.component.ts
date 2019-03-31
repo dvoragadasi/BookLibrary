@@ -10,12 +10,14 @@ import { BookServiceService } from '../book-service.service';
 export class LibraryComponent implements OnInit {
 
   public editMode = false;
-  public editBook: Book[];
-   public books:Book[];
+  public editBook: Book;
+   public books: Book[];
   ngOnInit() {
+    //debugger
   }
 
-constructor(private srv:BookServiceService) {
+constructor(private srv: BookServiceService) {
+  //debugger
 this.books = srv.getBooks();
 }
 

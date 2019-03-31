@@ -1,5 +1,6 @@
 import { Book } from './../Book';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { BookServiceService } from '../book-service.service';
 
 @Component({
   selector: 'app-book-edit',
@@ -7,15 +8,20 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./book-edit.component.scss']
 })
 export class BookEditComponent implements OnInit {
-  @Input() book: Book;
+  @Input() Mybook:Book = new Book();
   @Output() saveBook: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor( private srv:BookServiceService) { }
 
   ngOnInit() {
   }
 
   saveButton(book) {
-    this.saveBook.emit(book);
+    this.srv.saveBook(book);
+  }
+
+  addBook(book)
+  {
+
   }
 }
