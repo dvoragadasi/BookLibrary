@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LibraryComponent } from './library/library.component';
+import { SharedServicesModule } from './shared-services/shared-services.module';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
     BookEditComponent,
     HomePageComponent,
     LibraryComponent,
-    NavBarComponent
+    NavBarComponent,
+    SharedServicesModule
   ],
   imports: [
     BrowserModule,
